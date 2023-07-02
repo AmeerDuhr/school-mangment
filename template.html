@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 15px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .footer {
+        background-color: #f2f2f2;
+      }
+
+      #report {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      #report td,
+      #report th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #report th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #b4b4b4;
+        color: white;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h2>REPORT CARD</h2>
+    <table id="report">
+      <tbody>
+        <tr>
+          <td>Name: <b>{{ title }}</b></td>
+          <td>Month-Year: <b>{{ mmyy }}</b></td>
+        </tr>
+        <tr>
+          <td>Father: <b>{{ father }}</b></td>
+          <td>Class-Grade: <b>{{ ccgg }}</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table id="report">
+      <thead>
+        <tr>
+          <th>SUBJECT</th>
+          <th>MARK</th>
+          <th>FULL MARK</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for row in rows %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <table id="report">
+      <tbody>
+        <tr class="footer">
+          <td><b>Result: {{ result }}</b></td>
+          <td><b>Total: {{ total }}</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
